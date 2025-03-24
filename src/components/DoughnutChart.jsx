@@ -1,4 +1,5 @@
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
+import { useTheme } from "styled-components";
 import { Doughnut } from "react-chartjs-2";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
@@ -27,5 +28,23 @@ export const data = {
 };
 
 export function DoughnutChart() {
-  return <Doughnut data={data} />;
+  const theme = useTheme();
+
+  const options = {
+    plugins: {
+      title: {
+        display: true,
+        text: "Chart.js Doughnut Chart",
+        color: theme.text,
+      },
+      legend: {
+        labels: {
+          color: theme.text,
+        },
+      },
+    },
+    responsive: true,
+    };
+
+  return <Doughnut data={data} options={options}/>;
 }

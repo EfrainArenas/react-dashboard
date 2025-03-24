@@ -4,24 +4,22 @@ import {
   ArcElement,
   Tooltip,
   Legend,
-} from 'chart.js';
-import { PolarArea } from 'react-chartjs-2';
+} from "chart.js";
+import { PolarArea } from "react-chartjs-2";
+import { useTheme } from "styled-components";
 
 ChartJS.register(RadialLinearScale, ArcElement, Tooltip, Legend);
 
 export const data = {
-  labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+  labels: ["Red", "Yellow", "Green"],
   datasets: [
     {
-      label: '# of Votes',
-      data: [12, 19, 3, 5, 2, 3],
+      label: "# of Votes",
+      data: [6, 5, 4],
       backgroundColor: [
-        'rgba(255, 99, 132, 0.5)',
-        'rgba(54, 162, 235, 0.5)',
-        'rgba(255, 206, 86, 0.5)',
-        'rgba(75, 192, 192, 0.5)',
-        'rgba(153, 102, 255, 0.5)',
-        'rgba(255, 159, 64, 0.5)',
+        "rgba(255, 99, 132, 0.5)",
+        "rgba(255, 206, 86, 0.5)",
+        "rgba(75, 192, 192, 0.5)",
       ],
       borderWidth: 1,
     },
@@ -29,5 +27,18 @@ export const data = {
 };
 
 export function PolarChart() {
-  return <PolarArea data={data} />;
+  const theme = useTheme();
+
+  const options = {
+    plugins: {
+      legend: {
+        labels: {
+          color: theme.text,
+        },
+      },
+    },
+    responsive: true,
+  };
+
+  return <PolarArea data={data} options={options}/>;
 }

@@ -1,4 +1,5 @@
 import { Line } from "react-chartjs-2";
+import { useTheme } from "styled-components";
 import {
   Chart as ChartJS,
   LineElement,
@@ -8,6 +9,7 @@ import {
   Tooltip,
   Title,
 } from "chart.js";
+import { color } from "chart.js/helpers";
 
 ChartJS.register(
   LineElement,
@@ -19,6 +21,8 @@ ChartJS.register(
 );
 
 const LineChart = () => {
+  const theme = useTheme();
+
   const data = {
     labels: ["January", "February", "March", "April", "May", "June", "July"],
     datasets: [
@@ -41,8 +45,10 @@ const LineChart = () => {
       title: {
         display: true,
         text: "Happiness level if you hire me",
+        color: theme.text,
       },
       tooltip: {
+        
         enabled: true, // Ensure tooltips are enabled
         callbacks: {
           label: function (context) {
@@ -54,6 +60,9 @@ const LineChart = () => {
       legend: {
         display: true,
         position: "top",
+        labels: {
+            color: theme.text, // Cambia el color de la leyenda
+          },
       },
     },
     scales: {
@@ -61,11 +70,17 @@ const LineChart = () => {
         grid: {
           display: false,
         },
+        ticks: {
+            color: theme.text, // Cambia el color de los labels del eje X
+          },
       },
       y: {
         grid: {
-          color: "#f0f0f0",
+          color: theme.gridColor, // Cambia el color de la cuadrícula
         },
+        ticks: {
+            color: theme.text, // Cambia el color de los labels del eje X
+          },
       },
     },
   };

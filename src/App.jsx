@@ -49,7 +49,7 @@ function App() {
         <GlobalStyles />
         <Banner>
           <Title>
-            <h1>Dashboard Example</h1>
+            <h1>React Dashboard Example</h1>
             <h2>By: Efraín Arenas</h2>
           </Title>
           <ThemeToggle toggleTheme={toggleTheme} />

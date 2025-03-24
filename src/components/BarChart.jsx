@@ -7,8 +7,8 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
-
 import { Bar } from "react-chartjs-2";
+import { useTheme } from "styled-components";
 
 ChartJS.register(
   CategoryScale,
@@ -18,19 +18,6 @@ ChartJS.register(
   Tooltip,
   Legend
 );
-
-export const options = {
-  responsive: true,
-  plugins: {
-    legend: {
-      position: "top",
-    },
-    title: {
-      display: true,
-      text: "Chart.js Bar Chart",
-    },
-  },
-};
 
 const labels = ["January", "February", "March", "April", "May", "June", "July"];
 
@@ -51,6 +38,45 @@ export const data = {
 };
 
 const BarChart = () => {
+  const theme = useTheme();
+
+  const options = {
+    responsive: true,
+    plugins: {
+      legend: {
+        position: "top",
+        labels: {
+          color: theme.text,
+        },
+      },
+      title: {
+        display: true,
+        text: "Chart.js Bar Chart",
+        color: theme.text,
+      },
+    },
+    scales: {
+      x: {
+        stacked: true,
+        ticks: {
+          color: theme.text, // Cambia el color de los labels del eje X
+        },
+        grid: {
+          color: theme.gridColor, // Cambia el color de la cuadrícula
+        },
+      },
+      y: {
+        stacked: true,
+        ticks: {
+          color: theme.text, // Cambia el color de los valores numéricos del eje Y
+        },
+        grid: {
+          color: theme.gridColor, // Cambia el color de la cuadrícula
+        },
+      },
+    },
+  };
+
   return (
     <>
       <Bar options={options} data={data} />

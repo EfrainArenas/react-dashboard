@@ -7,43 +7,56 @@ export const Grid = styled.div`
   grid-template-rows: repeat(6, 1fr);
   gap: 16px;
   max-height: 80vh;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr; /* Solo una columna en móviles */
+    grid-template-rows: auto; /* Altura automática según el contenido */
+    padding: 16px;
+  }
 `;
 
-export const Div1 = styled.div`
+export const Div = styled.div`
+  @media (max-width: 768px) {
+    grid-column: span 1 / span 1; /* Cada div ocupa una fila completa */
+    grid-row: auto; /* Altura automática */
+  }
+`;
+
+export const Div1 = styled(Div)`
   grid-column: span 2 / span 2;
   grid-row: span 2 / span 2;
 `;
 
-export const Div2 = styled.div`
+export const Div2 = styled(Div)`
   grid-column: span 3 / span 3;
   grid-row: span 3 / span 3;
-  grid-column-start: 3;
+  /* grid-column-start: 3; */
 `;
 
-export const Div3 = styled.div`
+export const Div3 = styled(Div)`
   grid-column: span 2 / span 2;
   grid-row: span 3 / span 3;
-  grid-column-start: 6;
+  /* grid-column-start: 6; */
 `;
 
-export const Div4 = styled.div`
+export const Div4 = styled(Div)`
   grid-column: span 2 / span 2;
   grid-row: span 4 / span 4;
-  grid-row-start: 3;
+  /* grid-row-start: 3; */
 `;
 
-export const Div5 = styled.div`
+export const Div5 = styled(Div)`
   grid-column: span 2 / span 2;
   grid-row: span 3 / span 3;
-  grid-column-start: 3;
-  grid-row-start: 4;
+  /* grid-column-start: 3;
+  grid-row-start: 4; */
 `;
 
-export const Div6 = styled.div`
+export const Div6 = styled(Div)`
   grid-column: span 3 / span 3;
   grid-row: span 3 / span 3;
-  grid-column-start: 5;
-  grid-row-start: 4;
+  /* grid-column-start: 5;
+  grid-row-start: 4; */
 `;
 
 export const DashboardGrid = ({ div1, div2, div3, div4, div5, div6 }) => {
