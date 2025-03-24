@@ -11,52 +11,75 @@ export const Grid = styled.div`
   @media (max-width: 768px) {
     grid-template-columns: 1fr; /* Solo una columna en móviles */
     grid-template-rows: auto; /* Altura automática según el contenido */
-    padding: 16px;
+    
   }
 `;
 
-export const Div = styled.div`
+export const Div1 = styled.div`
+  grid-column: span 2 / span 2;
+  grid-row: span 2 / span 2;
+
   @media (max-width: 768px) {
     grid-column: span 1 / span 1; /* Cada div ocupa una fila completa */
     grid-row: auto; /* Altura automática */
   }
 `;
 
-export const Div1 = styled(Div)`
-  grid-column: span 2 / span 2;
-  grid-row: span 2 / span 2;
-`;
-
-export const Div2 = styled(Div)`
+export const Div2 = styled.div`
   grid-column: span 3 / span 3;
   grid-row: span 3 / span 3;
   /* grid-column-start: 3; */
+
+  @media (max-width: 768px) {
+    grid-column: span 1 / span 1; /* Cada div ocupa una fila completa */
+    grid-row: auto; /* Altura automática */
+  }
 `;
 
-export const Div3 = styled(Div)`
+export const Div3 = styled.div`
   grid-column: span 2 / span 2;
   grid-row: span 3 / span 3;
   /* grid-column-start: 6; */
+
+  @media (max-width: 768px) {
+    grid-column: span 1 / span 1; /* Cada div ocupa una fila completa */
+    grid-row: auto; /* Altura automática */
+  }
 `;
 
-export const Div4 = styled(Div)`
+export const Div4 = styled.div`
   grid-column: span 2 / span 2;
   grid-row: span 4 / span 4;
   /* grid-row-start: 3; */
+
+  @media (max-width: 768px) {
+    grid-column: span 1 / span 1; /* Cada div ocupa una fila completa */
+    grid-row: auto; /* Altura automática */
+  }
 `;
 
-export const Div5 = styled(Div)`
+export const Div5 = styled.div`
   grid-column: span 2 / span 2;
   grid-row: span 3 / span 3;
   /* grid-column-start: 3;
   grid-row-start: 4; */
+
+  @media (max-width: 768px) {
+    grid-column: span 1 / span 1; /* Cada div ocupa una fila completa */
+    grid-row: auto; /* Altura automática */
+  }
 `;
 
-export const Div6 = styled(Div)`
+export const Div6 = styled.div`
   grid-column: span 3 / span 3;
   grid-row: span 3 / span 3;
   /* grid-column-start: 5;
   grid-row-start: 4; */
+
+  @media (max-width: 768px) {
+    grid-column: span 1 / span 1; /* Cada div ocupa una fila completa */
+    grid-row: auto; /* Altura automática */
+  }
 `;
 
 export const DashboardGrid = ({ div1, div2, div3, div4, div5, div6 }) => {

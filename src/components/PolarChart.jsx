@@ -4,6 +4,7 @@ import {
   ArcElement,
   Tooltip,
   Legend,
+  scales,
 } from "chart.js";
 import { PolarArea } from "react-chartjs-2";
 import { useTheme } from "styled-components";
@@ -36,6 +37,21 @@ export function PolarChart() {
           color: theme.text,
         },
       },
+    },
+    scales: {
+        r: {
+            angleLines: {
+            color: theme.gridColor,
+            },
+            grid: {
+            color: theme.gridColor,
+            },
+            pointLabels: {
+            font: {
+                color: theme.text,
+            },
+            },
+        }
     },
     responsive: true,
   };
