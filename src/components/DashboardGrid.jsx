@@ -11,6 +11,7 @@ export const Grid = styled.div`
   @media (max-width: 768px) {
     grid-template-columns: 1fr; /* Solo una columna en móviles */
     grid-template-rows: auto; /* Altura automática según el contenido */
+    padding: 16px;
     
   }
 `;

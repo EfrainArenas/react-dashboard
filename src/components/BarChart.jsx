@@ -51,7 +51,7 @@ const BarChart = () => {
       },
       title: {
         display: true,
-        text: "Chart.js Bar Chart",
+        text: "Another awesome Bar Chart",
         color: theme.text,
       },
     },

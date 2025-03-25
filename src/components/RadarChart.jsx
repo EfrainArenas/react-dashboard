@@ -41,9 +41,9 @@ import {
         borderWidth: 1,
       },
       {
-        label: "with your company",
+        label: "with React",
         data: [15, 27, 26, 25, 20, 27, 0, 0, 40, 0],
-        backgroundColor: "rgba(99, 255, 245, 0.2)",
+        backgroundColor: "rgb(75, 192, 192, 0.4)",
         borderColor: "#63ffd8",
         borderWidth: 1,
       },
